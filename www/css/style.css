@@ -17,6 +17,10 @@ label.item.valid-lr {
   border-right: 2px solid green;
 }
 
+body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+
 /** Styling for the error text and container **/
 .form-errors {
   margin: 5px 0
@@ -24,4 +28,17 @@ label.item.valid-lr {
 .form-error {
   padding: 2px 0 2px 16px;
   color: red;
+}
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
 }
