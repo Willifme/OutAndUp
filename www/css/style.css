@@ -17,10 +17,6 @@ label.item.valid-lr {
   border-right: 2px solid green;
 }
 
-body {
-  cursor: url('http://ionicframework.com/img/finger.png'), auto;
-}
-
 /** Styling for the error text and container **/
 .form-errors {
   margin: 5px 0
