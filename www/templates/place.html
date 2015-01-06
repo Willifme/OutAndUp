@@ -6,12 +6,13 @@
 			</div>
 			<!-- General wrapper for list (for use with 'the ng-repeat' -->
 			<div ng-repeat="attraction in places[id].attractions">
-				<ion-item ng-click="toggleAttraction(attraction)" ng-class="{ active: isAttractionShown(attraction)}">
-					<i class="icon" ng-class="isAttractionShown(attraction) ? 'ion-minus' : 'ion-plus'"></i>
+				<ion-item ng-click="toggleDropdown(attraction)" ng-class="{ active: isDropdownShown(attraction)}">
+					<i class="icon" ng-class="isDropdownShown(attraction) ? 'ion-minus' : 'ion-plus'"></i>
 					{{ attraction.name }}	
 				</ion-item>
-				<ion-item class="item-accordion" ng-show="isAttractionShown(attraction)">
-					{{ attraction.review }}
+				<ion-item class="item-accordion" ng-show="isDropdownShown(attraction)">
+					{{ attraction.body }}
+					<rating ng-model="attraction.stars" max="max"></rating>
 				</ion-item>
 			</div>
 			<div class="item item-divider">
@@ -19,14 +20,13 @@
 			</div>
 			<!-- General wrapper for list (for use with 'the ng-repeat' -->
 			<div ng-repeat="review in places[id].reviews">
-				<ion-item ng-click="toggleAttraction(review)" ng-class="{ active: isAttractionShown(review)}">
-					<i class="icon" ng-class="isAttractionShown(review) ? 'ion-minus' : 'ion-plus'"></i>
+				<ion-item ng-click="toggleDropdown(review)" ng-class="{ active: isDropdownShown(review)}">
+					<i class="icon" ng-class="isDropdownShown(review) ? 'ion-minus' : 'ion-plus'"></i>
 					{{ review.title }}
 				</ion-item>
-				<ion-item class="item-accordion" ng-show="isAttractionShown(review)">
+				<ion-item class="item-accordion" ng-show="isDropdownShown(review)">
 					{{ review.body }}
-					<!-- BUG: Cannot edit star rating -->
-					<rating ng-model="review.stars" max="max" ng-readonly="true"></rating>
+					<rating ng-model="review.stars" max="max"></rating>
 				</ion-item>
 			</div>
 		</ion-list>

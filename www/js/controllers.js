@@ -6,20 +6,20 @@ angular.module('starter.controllers', [])
 	
 	// This object needs revision
 	$rootScope.attractionReviews = [ 
-		{ name: 'Attraction 0', review: 'Attraction 0 description', id: 0 },
-		{ name: 'Attraction 1', review: 'Attraction 1 description', id: 1 } 
+		{ name: 'Attraction 0', body: 'Attraction 0 review body', stars: 2, id: 0 },
+		{ name: 'Attraction 1', body: 'Attraction 1 review body', stars: 1, id: 1 } 
 	];
 
 	// This object needs revision
 	$rootScope.placeReviews = [
-		{ title: 'Place 1 review', body: 'Place 1 body', stars: 5, id: 0 },
-		{ title: 'Place 2 review', body: 'Place 2 body', stars: 3, id: 1 }
+		{ title: 'Place 1 review', body: 'Place 1 review body', stars: 5, id: 0 },
+		{ title: 'Place 2 review', body: 'Place 2 review body', stars: 3, id: 1 }
 	];
 
 	// They are hardcoded but it does not matter
 	$rootScope.places = [
-		{ name: 'Example place', attractions: [$rootScope.attractionReviews[0], $rootScope.attractionReviews[1]], reviews: [$rootScope.placeReviews[0] ,$rootScope.placeReviews[1]], id: 0},
-		{ name: 'Other', attractions: [$rootScope.attractionReviews[1]], reviews: [$rootScope.placeReviews[1]], id: 1 },
+		{ name: 'Place 1', attractions: [$rootScope.attractionReviews[0], $rootScope.attractionReviews[1]], reviews: [$rootScope.placeReviews[0] ,$rootScope.placeReviews[1]], id: 0},
+		{ name: 'Place', attractions: [$rootScope.attractionReviews[1]], reviews: [$rootScope.placeReviews[1]], id: 1 },
 
 	];
 })
@@ -79,13 +79,8 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('PlacesCtrl', function($scope, $rootScope) {
-/*	
-	$scope.places = [{ name: 'Example place', id: 1, attractions: [ { name: 'Water slide', description: 'Something here' },
-																	{ name: 'Thing', description: 'Description two' } ] },
-					 { name: 'Other', id: 1, attraction: [ { name: 'Example', description: 'example' } ] }
+.controller('PlacesCtrl', function($scope) {
 
-	];*/
 })
 
 .controller('PlaceCtrl', function($scope, $stateParams) {
@@ -94,18 +89,18 @@ angular.module('starter.controllers', [])
 
 	$scope.max = 5;
   	/*
-   * if given attraction is the selected attraction, deselect it
-   * else, select the given attraction
+   * if given dropdown is the selected dropdown, deselect it
+   * else, select the given dropdown
    */
-  $scope.toggleAttraction = function(attraction) {
-    if ($scope.isAttractionShown(attraction)) {
-      $scope.showAttractions = null;
+  $scope.toggleDropdown = function(dropdown) {
+    if ($scope.isDropdownShown(dropdown)) {
+      $scope.showDropdown = null;
     } else {
-      $scope.showAttractions = attraction;
+      $scope.showDropdown = dropdown;
     }
   };
-  $scope.isAttractionShown = function(attraction) {
-    return $scope.showAttractions === attraction;
+  $scope.isDropdownShown = function(dropdown) {
+    return $scope.showDropdown === dropdown;
   };	
 })
 
