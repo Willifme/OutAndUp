@@ -68,16 +68,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.
       }
     }
   })
-    .state('app.playlists', {
-      url: "/playlists",
-      views: {
-        'menuContent': {
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
-
   .state('app.single', {
     url: "/playlists/:playlistId",
     views: {
