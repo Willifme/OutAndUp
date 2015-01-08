@@ -69,10 +69,6 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlacesCtrl', function($scope) {
-<<<<<<< HEAD
-=======
-
->>>>>>> d61d57e96a70060079aea467a02414940ca19b6a
 })
 
 .controller('PlaceCtrl', function($scope, $stateParams) {
@@ -96,11 +92,6 @@ angular.module('starter.controllers', [])
   };	
 })
 
-<<<<<<< HEAD
 .controller('AboutCtrl', function($scope) {
         
 });
-=======
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-});
->>>>>>> d61d57e96a70060079aea467a02414940ca19b6a
