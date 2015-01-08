@@ -41,7 +41,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.
   })
 
   .state('app.places', {
-    url: "/places",
+    url: "/places/:name",
 	views: {
 	  'menuContent': {
 		  templateUrl: "templates/places.html",
@@ -51,7 +51,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.
    })
 
   	.state('app.place', {
-		url: "/places/:placeId",
+		url: "/place/:placeId",
 		views: {
 	  	    'menuContent': {
 		        templateUrl: "templates/place.html",

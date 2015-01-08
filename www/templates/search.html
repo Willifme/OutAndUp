@@ -1,9 +1,9 @@
 <ion-view view-title="Search">
   <ion-content>
-  	<form name="searchForm" ng-submit="searchForm.$valid && searchTest(search.query)" class="css-form" novalidate>
+  	<form name="searchForm" ng-submit="searchForm.$valid && searchTest(search.name)" class="css-form" novalidate>
 		<label class="item item-input" ng-class="{ 'has-error': searchForm.search.$invalid }">
     		<i class="icon ion-search placeholder-icon"></i>
-    		<input name="search" type="search" placeholder="Search" ng-model="search.query" required>
+    		<input name="search" type="search" placeholder="Search" ng-model="search.name" required>
     	</label>
 		<div ng-messages="searchForm.search.$error" ng-messages-include="form-errors">
 		</div>

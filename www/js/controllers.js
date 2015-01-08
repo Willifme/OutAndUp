@@ -6,8 +6,8 @@ angular.module('starter.controllers', [])
 	
 	// This object needs revision
 	$rootScope.attractionReviews = [ 
-		{ name: 'Attraction 0', body: 'Attraction 0 review body', stars: 2, id: 0 },
-		{ name: 'Attraction 1', body: 'Attraction 1 review body', stars: 1, id: 1 } 
+		{ name: 'Attraction 0', description: 'Attraction 0 review body', stars: 2, id: 0 },
+		{ name: 'Attraction 1', description: 'Attraction 1 review body', stars: 1, id: 1 } 
 	];
 
 	// This object needs revision
@@ -19,7 +19,7 @@ angular.module('starter.controllers', [])
 	// They are hardcoded but it does not matter
 	$rootScope.places = [
 		{ name: 'Place 1', attractions: [$rootScope.attractionReviews[0], $rootScope.attractionReviews[1]], reviews: [$rootScope.placeReviews[0] ,$rootScope.placeReviews[1]], id: 0},
-		{ name: 'Place', attractions: [$rootScope.attractionReviews[1]], reviews: [$rootScope.placeReviews[1]], id: 1 },
+		{ name: 'Place 2', attractions: [$rootScope.attractionReviews[1]], reviews: [$rootScope.placeReviews[1]], id: 1 },
 
 	];
 })
@@ -57,24 +57,29 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('SearchCtrl', function($scope, $rootScope) {
+.controller('SearchCtrl', function($scope, $rootScope, $location) {
 
 	$scope.searchTest = function(searchQuery) {
 
-		console.log("Hello");
+		// Redirect user to the places controller
+		$location.path("/app/places/" + searchQuery);
 
 	};
 
 
 })
 
-.controller('PlacesCtrl', function($scope) {
+.controller('PlacesCtrl', function($scope, $stateParams, $rootScope) {
+
+	$scope.name = $stateParams.name;
+
 })
 
 .controller('PlaceCtrl', function($scope, $stateParams) {
 	// Screw it, don't know how to access '$rootScope' in the template just assign a variable insted. Just a mirage (calling the two the same name)
 	$scope.id = $stateParams.placeId;
 
+	// This is the maximum star rating which a review can have
 	$scope.max = 5;
   	/*
    * if given dropdown is the selected dropdown, deselect it
