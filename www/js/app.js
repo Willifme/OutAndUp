@@ -53,6 +53,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.
   	.state('app.place', {
 		url: "/places/:placeId",
 		views: {
+<<<<<<< HEAD
 	  	    'menuContent': {
 		        templateUrl: "templates/place.html",
 		        controller: 'PlaceCtrl'
@@ -68,6 +69,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.
             }
         }
     })
+=======
+	  		'menuContent': {
+				 templateUrl: "templates/place.html",
+		     	controller: 'PlaceCtrl'
+	  		}
+		}
+  	})
+
+>>>>>>> d61d57e96a70060079aea467a02414940ca19b6a
   .state('app.browse', {
     url: "/browse",
     views: {
