@@ -30,18 +30,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: "/search",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/search.html",
-		controller: "SearchCtrl"
-      }
-    }
-  })
-
   .state('app.places', {
-    url: "/places/:name",
+    url: "/places",
 	views: {
 	  'menuContent': {
 		  templateUrl: "templates/places.html",
@@ -50,33 +40,44 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.
      }
    })
 
-  	.state('app.place', {
-		url: "/place/:placeId",
+  	.state('app.places.place', {
+		url: "/:placeId",
 		views: {
-	  	    'menuContent': {
+	  	    'menuContent@app': {
 		        templateUrl: "templates/place.html",
 		        controller: 'PlaceCtrl'
 	  	    }
 		}
   	})
+		
+	.state('app.places.place.attractions', {
+		url: "/attractions",
+		views: {
+			'menuContent@app': {
+				templateUrl: "templates/attractions.html"
+			}
+		}
+	})
+
+	.state('app.places.place.reviews', {
+		url: "/reviews",
+		views:  {
+			'menuContent@app': {
+				templateUrl: "templates/reviews.html"
+			}
+		}
+
+	})
+
     .state('app.about', {
         url: "/about",
         views: {
             'menuContent': {
-            templateUrl: "templates/about.html",
-            controller: 'AboutCtrl'
+				templateUrl: "templates/about.html",
             }
         }
-    })
-  
-  .state('app.browse', {
-    url: "/browse",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/browse.html"
-      }
-    }
-  });
+    });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/places');
 });

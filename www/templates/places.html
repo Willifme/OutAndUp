@@ -1,7 +1,13 @@
 <ion-view view-title="Places">
 	<ion-content>
+		<form name="searchForm" ng-submit="searchForm.$valid" class="css-form" novalidate>
+			<label class="item item-input" ng-class="{ 'has-error': searchForm.search.$invalid }">
+				<i class="icon ion-search placeholder-icon"></i>
+				<input name="search" type="search" placeholder="Search" ng-model="nameSearch" required>
+			</label>
+		</form>
 		<ion-list>
-		<ion-item ng-repeat="place in places | filter:name" href="#/app/place/{{place.id}}">
+		<ion-item ng-repeat="place in places | filter:nameSearch" href="#/app/places/{{place.id}}">
 				{{ place.name }}	
 			</ion-item>
 		</ion-list>

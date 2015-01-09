@@ -1,34 +1,22 @@
 <ion-view view-title="{{places[id].name}}">
 	<ion-content>
-		<ion-list>
-	   		<div class="item item-divider">
-				Attractions
+		<div lass="list card">
+<!--			<div class="item item-divider">
+					{{ places[id].name }}
+			</div> -->
+			<div class="item item-text-wrap">
+				{{ places[id].description }}	
 			</div>
-			<!-- General wrapper for list (for use with 'the ng-repeat' -->
-			<div ng-repeat="attraction in places[id].attractions">
-				<ion-item ng-click="toggleDropdown(attraction)" ng-class="{ active: isDropdownShown(attraction)}">
-					<i class="icon" ng-class="isDropdownShown(attraction) ? 'ion-minus' : 'ion-plus'"></i>
-					{{ attraction.name }}	
-				</ion-item>
-				<ion-item class="item-accordion" ng-show="isDropdownShown(attraction)">
-					{{ attraction.body }}
-					<rating ng-model="attraction.stars" max="max"></rating>
-				</ion-item>
+			<div class="item tabs tab-secondary tabs-icon-left">
+				<a class="tab-item" href="#/app/places/{{id}}/reviews">
+					<i class="icon ion-chatbox-working"></i>
+					Reviews
+				</a>
+				<a class="tab-item" href="#/app/places/{{id}}/attractions">
+					<i class="icon ion-happy"></i>
+					Attractions
+				</a>
 			</div>
-			<div class="item item-divider">
-				Reviews
-			</div>
-			<!-- General wrapper for list (for use with 'the ng-repeat' -->
-			<div ng-repeat="review in places[id].reviews">
-				<ion-item ng-click="toggleDropdown(review)" ng-class="{ active: isDropdownShown(review)}">
-					<i class="icon" ng-class="isDropdownShown(review) ? 'ion-minus' : 'ion-plus'"></i>
-					{{ review.title }}
-				</ion-item>
-				<ion-item class="item-accordion" ng-show="isDropdownShown(review)">
-					{{ review.body }}
-					<rating ng-model="review.stars" max="max"></rating>
-				</ion-item>
-			</div>
-		</ion-list>
+		</div>
 	</ion-content>
 </ion-view>

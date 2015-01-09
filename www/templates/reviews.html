@@ -1,0 +1,16 @@
+<ion-view view-title="Reviews">
+	<ion-content>
+		<div ng-controller="PlaceCtrl">
+			<!-- Insert logos here -->
+			<div ng-repeat="review in places[id].reviews" class="list card">
+				<div class="item item-divider">
+					{{ review.title }}
+				</div>
+				<div class="item item-text-wrap">
+					{{ review.body }}
+					<rating ng-model="review.stars" max="max"></rating>
+				</div>		
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

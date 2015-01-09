@@ -6,8 +6,15 @@ angular.module('starter.controllers', [])
 	
 	// This object needs revision
 	$rootScope.attractionReviews = [ 
-		{ name: 'Attraction 0', description: 'Attraction 0 review body', stars: 2, id: 0 },
-		{ name: 'Attraction 1', description: 'Attraction 1 review body', stars: 1, id: 1 } 
+		{ title: 'Attraction review 0', author: 'Example Person 1', body: 'Attraction 0 review body', stars: 2, id: 0 },
+		{ title: 'Attraction review 1', author: 'Example Person 2', body: 'Attraction 1 review body', stars: 1, id: 1 } 
+	];
+
+	// This object needs revision
+	$rootScope.attractionDescription = [
+		{ name: 'Attraction 0', description: 'Attraction 0 description body', reviews: [$rootScope.attractionReviews[0], $rootScope.attractionReviews[1]], id: 0 },
+		{ name: 'Attraction 1', description: 'Attraction 1 description body', reviews: [$rootScope.attractionReviews[1]], id: 1 } 
+
 	];
 
 	// This object needs revision
@@ -18,8 +25,8 @@ angular.module('starter.controllers', [])
 
 	// They are hardcoded but it does not matter
 	$rootScope.places = [
-		{ name: 'Place 1', attractions: [$rootScope.attractionReviews[0], $rootScope.attractionReviews[1]], reviews: [$rootScope.placeReviews[0] ,$rootScope.placeReviews[1]], id: 0},
-		{ name: 'Place 2', attractions: [$rootScope.attractionReviews[1]], reviews: [$rootScope.placeReviews[1]], id: 1 },
+		{ name: 'Place 1', attractions: [$rootScope.attractionDescription[0], $rootScope.attractionDescription[1]], reviews: [$rootScope.placeReviews[0] ,$rootScope.placeReviews[1]], description: 'Place 1 description', id: 0},
+		{ name: 'Place 2', attractions: [$rootScope.attractionDescription[1]], reviews: [$rootScope.placeReviews[1]], description: 'Place 2 description', id: 1 },
 
 	];
 })
@@ -57,18 +64,6 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('SearchCtrl', function($scope, $rootScope, $location) {
-
-	$scope.searchTest = function(searchQuery) {
-
-		// Redirect user to the places controller
-		$location.path("/app/places/" + searchQuery);
-
-	};
-
-
-})
-
 .controller('PlacesCtrl', function($scope, $stateParams, $rootScope) {
 
 	$scope.name = $stateParams.name;
@@ -95,8 +90,4 @@ angular.module('starter.controllers', [])
   $scope.isDropdownShown = function(dropdown) {
     return $scope.showDropdown === dropdown;
   };	
-})
-
-.controller('AboutCtrl', function($scope) {
-        
 });
