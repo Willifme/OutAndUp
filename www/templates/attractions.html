@@ -1,35 +1,28 @@
-<ion-view view-title="Attractions">
+<ion-view ng-controller="PlaceCtrl" view-title="{{places[id].name}} Attractions">
 	<ion-content>
-	<div ng-controller="PlaceCtrl">
-		<div ng-repeat="attraction in places[id].attractions">
-			<!-- Insert logos here -->
-			<div class="list card">
-				<div class="item item-divider">
-					{{ attraction.name }}
-				</div>
-				<div class="item item-text-wrap">
-					Description: {{ attraction.description }}
-					<div ng-repeat="review in attraction.reviews">
-						<!--<ul>Author: {{ review.author }}</ul>
-						<ul>Title: {{ review.title }}</ul>
-						<ul>Body: {{ review.body }}</ul>	
-						<rating ng-model="review.stars" max="max"></rating>
-						<hr ng-show="review is attraction.reviews - 1"> -->
+        <div ng-repeat="attraction in places[id].attractions">
+            <!-- Insert logos here -->
+            <div class="list card">
+                <div class="item item-divider">
+                    {{ attraction.name }}
+                </div>
+                <div class="item item-text-wrap">
+                    Description: {{ attraction.description }}
+                    <div ng-repeat="review in attraction.reviews">
                         <ion-list ng-click="toggleDropdown(review)" ng-class="{ active: isDropdownShown(review)}">
                             <ion-item>
                                 <i class="icon" ng-class="isDropdownShown(review) ? 'ion-minus' : 'ion-plus'"></i>
                                 {{ review.title }}
-                            </ion-item>
-                            <ion-item class="item-accordion" ng-show="isDropdownShown(review)">
-                                <h3>{{ review.author}} says: </h3>
-                                <p>{{ review.body }} </p>
-                                <p> <rating ng-model="review.stars" max="max"></rating> </p>
+                                <ion-item class="item-accordion" ng-show="isDropdownShown(review)">
+                                    <h3>{{ review.author}} says: </h3>
+                                    <p>{{ review.body }} </p>
+                                    <p> <rating ng-model="review.stars" max="max"></rating> </p>
+                                </ion-item>
                             </ion-item>
                         </ion-list>
-					</div>
-				</div>		
-			</div>
-		</div>
-	</div>
+                    </div>
+                </div>		
+            </div>
+        </div>
 	</ion-content>
 </ion-view>
