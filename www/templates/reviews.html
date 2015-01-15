@@ -7,8 +7,9 @@
 					{{ review.title }}
 				</div>
 				<div class="item item-text-wrap">
-					{{ review.body }}
-					<rating ng-model="review.stars" max="max"></rating>
+                    <h3> {{ review.author}} says:</h3>
+                    <p>{{ review.body }}</p>
+                    <p><rating ng-model="review.stars" max="max"></rating></p>
 				</div>		
 			</div>
 		</div>

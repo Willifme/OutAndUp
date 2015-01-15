@@ -9,13 +9,23 @@
 				</div>
 				<div class="item item-text-wrap">
 					Description: {{ attraction.description }}
-					<hr>
 					<div ng-repeat="review in attraction.reviews">
-						<ul>Author: {{ review.author }}</ul>
+						<!--<ul>Author: {{ review.author }}</ul>
 						<ul>Title: {{ review.title }}</ul>
-						</ul>Body: {{ review.body }}</ul>	
+						<ul>Body: {{ review.body }}</ul>	
 						<rating ng-model="review.stars" max="max"></rating>
-						<hr>
+						<hr ng-show="review is attraction.reviews - 1"> -->
+                        <ion-list ng-click="toggleDropdown(review)" ng-class="{ active: isDropdownShown(review)}">
+                            <ion-item>
+                                <i class="icon" ng-class="isDropdownShown(review) ? 'ion-minus' : 'ion-plus'"></i>
+                                {{ review.title }}
+                            </ion-item>
+                            <ion-item class="item-accordion" ng-show="isDropdownShown(review)">
+                                <h3>{{ review.author}} says: </h3>
+                                <p>{{ review.body }} </p>
+                                <p> <rating ng-model="review.stars" max="max"></rating> </p>
+                            </ion-item>
+                        </ion-list>
 					</div>
 				</div>		
 			</div>

@@ -12,22 +12,27 @@ angular.module('starter.controllers', [])
 
 	// This object needs revision
 	$rootScope.attractionDescription = [
-		{ name: 'Attraction 0', description: 'Attraction 0 description body', reviews: [$rootScope.attractionReviews[0], $rootScope.attractionReviews[1]], id: 0 },
+		{ name: 'Attraction 0', description: 'Attraction 0 description body', reviews: [$rootScope.attractionReviews[0]], id: 0 },
 		{ name: 'Attraction 1', description: 'Attraction 1 description body', reviews: [$rootScope.attractionReviews[1]], id: 1 } 
 
 	];
 
 	// This object needs revision
 	$rootScope.placeReviews = [
-		{ title: 'Place 1 review', body: 'Place 1 review body', stars: 5, id: 0 },
-		{ title: 'Place 2 review', body: 'Place 2 review body', stars: 3, id: 1 }
+        { title: 'Place 1 review', author: 'Example Person 1', body: 'Place 1 review body', stars: 5, id: 0 },
+        { title: 'Place 2 review', author: 'Example Person 2', body: 'Place 2 review body', stars: 3, id: 1 }
 	];
-
+    
+    // This object needs revision
+    $rootScope.placeDescription = [
+        { name: 'Place 1', attractions: [$rootScope.attractionDescription[0], $rootScope.attractionDescription[1]], reviews: [$rootScope.placeReviews[0], $rootScope.placeReviews[1]], description: 'Place 1 description', id: 0},
+        { name: 'Place 2', attractions: [$rootScope.attractionDescription[1]], reviews: [$rootScope.placeReviews[1]], description: 'Place 2 description', id: 1 },
+    ];
+    
 	// They are hardcoded but it does not matter
 	$rootScope.places = [
-		{ name: 'Place 1', attractions: [$rootScope.attractionDescription[0], $rootScope.attractionDescription[1]], reviews: [$rootScope.placeReviews[0] ,$rootScope.placeReviews[1]], description: 'Place 1 description', id: 0},
-		{ name: 'Place 2', attractions: [$rootScope.attractionDescription[1]], reviews: [$rootScope.placeReviews[1]], description: 'Place 2 description', id: 1 },
-
+		$rootScope.placeDescription[0],
+        $rootScope.placeDescription[1]
 	];
 })
 
