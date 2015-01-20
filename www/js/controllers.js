@@ -95,4 +95,8 @@ angular.module('starter.controllers', [])
   $scope.isDropdownShown = function(dropdown) {
     return $scope.showDropdown === dropdown;
   };	
+})
+
+.controller('AttractionCtrl', function($scope, $stateParams) {
+    $scope.attractionId = $stateParams.attractionId;
 });

@@ -7,7 +7,7 @@
 			</label>
 		</form>
 		<ion-list>
-		<ion-item ng-repeat="place in places | filter:nameSearch" href="#/app/places/{{place.id}}">
+		    <ion-item ng-repeat="place in places | filter:nameSearch" href="#/app/places/{{place.id}}">
 				{{ place.name }}	
 			</ion-item>
 		</ion-list>

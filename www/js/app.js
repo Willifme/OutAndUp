@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.rating'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.rating', 'elif'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -30,6 +30,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.
     controller: 'AppCtrl'
   })
 
+  .state('app.attractions', {
+    url: "/attractions",
+	views: {
+	  'menuContent': {
+		  templateUrl: "templates/attractions.html"
+      }
+    }
+  })	
+  
   .state('app.places', {
     url: "/places",
 	views: {
@@ -51,10 +60,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.
   	})
 		
 	.state('app.places.place.attractions', {
-		url: "/attractions",
+        url: "/attractions?attractionId",
 		views: {
 			'menuContent@app': {
-				templateUrl: "templates/places/place/attractions/attractions.html"
+				templateUrl: "templates/places/place/attractions/attractions.html",
+                controller: 'AttractionCtrl'
 			}
 		}
 	})
@@ -62,7 +72,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.
     .state('app.places.place.attractions.reviews', {
         url: "/reviews",
         views: {
-            'menuContent@app': {
+            'menuContent@attractions': {
                 templateUrl: "templates/places/place/attractions/reviews.html"
             }
         }

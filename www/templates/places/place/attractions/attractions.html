@@ -1,34 +1,40 @@
 <ion-view ng-controller="PlaceCtrl" view-title="{{places[id].name}} Attractions">
     <ion-content>
-        <div ng-repeat="attraction in places[id].attractions">
-            <!-- Insert logos here -->
-            <div class="list card">
-                <div class="item item-divider">
-                    {{ attraction.name }}
-                </div>
-                <div class="item item-text-wrap">
-                    Description: {{ attraction.description }}
-                </div>
-                    <!--       <div ng-repeat="review in attraction.reviews">
-<ion-list ng-click="toggleDropdown(review)" ng-class="{ active: isDropdownShown(review)}">
-<ion-item>
-<i class="icon" ng-class="isDropdownShown(review) ? 'ion-minus' : 'ion-plus'"></i>
-{{ review.title }}
-<ion-item class="item-accordion" ng-show="isDropdownShown(review)">
-<h3>{{ review.author}} says: </h3>
-<p>{{ review.body }} </p>
-<p> <rating ng-model="review.stars" max="max"></rating> </p>
-</ion-item>
-</ion-item>
-</ion-list>
-</div> -->
+        <div ng-if="!attractionId">
+            <div ng-repeat="attraction in places[id].attractions">
+                <!-- Insert logos here -->
+                <div class="list card">
+                    <div class="item item-divider">
+                        {{ attraction.name }}
+                    </div>
+                    <div class="item item-text-wrap">
+                        Description: {{ attraction.description }}
+                    </div>
                     <div class="item tabs tab-secondary tabs-icon-left">
-                        <a class="tab-item" href="#/app/places/{{id}}/attractions/reviews">
+                        <a class="tab-item" href="#/app/places/{{id}}/reviews">
                             <i class="icon ion-chatbox-working"></i>
                             Reviews
                         </a>
-                    </div>		
-              </div>
-         </div>
+                    </div>	
+                </div>
+            </div>
+        </div>
+        <div ng-else>
+            <!-- Fix this markup duplication -->
+            <div class="list card">
+                <div class="item item-divider">
+                    {{ places[id].attractions[attractionId].name }}
+                </div>
+                <div class="item item-text-wrap">
+                    Description: {{ places[id].attractions[attractionId].description }}
+                </div>
+                <div class="item item tabs tabs-secondary tabs-icon-left">
+                    <a class="tab-item" href="#/app/places/{{id}}/reviews">
+                        <i class="icon ion-chatbox-working"></i>
+                            Reviews
+                    </a>
+                </div>
+            </div>
+        </div>
     </ion-content>
 </ion-view>
