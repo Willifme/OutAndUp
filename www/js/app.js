@@ -34,7 +34,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.
     url: "/places",
 	views: {
 	  'menuContent': {
-		  templateUrl: "templates/places.html",
+		  templateUrl: "templates/places/places.html",
 		  controller: 'PlacesCtrl'
 	   }
      }
@@ -44,7 +44,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.
 		url: "/:placeId",
 		views: {
 	  	    'menuContent@app': {
-		        templateUrl: "templates/place.html",
+		        templateUrl: "templates/places/place/place.html",
 		        controller: 'PlaceCtrl'
 	  	    }
 		}
@@ -54,16 +54,25 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.
 		url: "/attractions",
 		views: {
 			'menuContent@app': {
-				templateUrl: "templates/attractions.html"
+				templateUrl: "templates/places/place/attractions/attractions.html"
 			}
 		}
 	})
+  
+    .state('app.places.place.attractions.reviews', {
+        url: "/reviews",
+        views: {
+            'menuContent@app': {
+                templateUrl: "templates/places/place/attractions/reviews.html"
+            }
+        }
+    })
 
 	.state('app.places.place.reviews', {
 		url: "/reviews",
 		views:  {
 			'menuContent@app': {
-				templateUrl: "templates/reviews.html"
+				templateUrl: "templates/places/place/reviews.html"
 			}
 		}
 
