@@ -58,7 +58,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.
 	  	    }
 		}
   	})
-		
+
+    .state('app.places.place.location', {
+        url: "/location",
+        views: {
+            'menuContent@app': {
+                templateUrl: "templates/places/place/location.html",
+                controller: 'MapCtrl'
+            }
+        }
+    })
+  
 	.state('app.places.place.attractions', {
         url: "/attractions?attractionId",
 		views: {
@@ -85,7 +95,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.
 				templateUrl: "templates/places/place/reviews.html"
 			}
 		}
-
 	})
 
     .state('app.about', {

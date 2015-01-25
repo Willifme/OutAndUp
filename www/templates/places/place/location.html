@@ -1,0 +1,5 @@
+<ion-view ng-controller="PlaceCtrl" view-title="{{places[id].name}} Location">
+	<ion-content ng-controller="MapCtrl" ng-init="init(places[id])">
+        <div id="map" data-tap-disabled="true"></div>
+    </ion-content>
+</ion-view>
