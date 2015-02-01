@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.rating', 'elif'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.rating', 'elif', 'uiGmapgoogle-maps'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -30,6 +30,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.
     controller: 'AppCtrl'
   })
 
+  .state('app.map', {
+    url: "/locations",
+    views: {
+      'menuContent': {
+          templateUrl: "templates/locations.html"
+       }
+    }
+  })
+  
   .state('app.attractions', {
     url: "/attractions",
 	views: {
@@ -63,8 +72,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.
         url: "/location",
         views: {
             'menuContent@app': {
-                templateUrl: "templates/places/place/location.html",
-                controller: 'MapCtrl'
+                templateUrl: "templates/places/place/location.html"
             }
         }
     })

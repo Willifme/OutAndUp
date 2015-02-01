@@ -40,12 +40,13 @@ label.item.valid-lr {
 .list .item.item-accordion.ng-hide-remove {
   display: block !important;
 }
-
-#map {
-  width: 100%;
+html, body {
   height: 100%;
 }
 
+.angular-google-map-container {
+  height: 100vh;
+}
 .scroll {
-  height: 100%;
+
 }

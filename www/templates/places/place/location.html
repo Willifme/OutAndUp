@@ -1,5 +1,9 @@
 <ion-view ng-controller="PlaceCtrl" view-title="{{places[id].name}} Location">
-	<ion-content ng-controller="MapCtrl" ng-init="init(places[id])">
-        <div id="map" data-tap-disabled="true"></div>
+	<ion-content scroll="false">
+     <!-- Hardcoding the starting position and zoom amount does not matter -->
+       <ui-gmap-google-map center="places[id]" zoom="6">
+           <ui-gmap-marker coords="places[id]" idKey="places[id].id">
+           </ui-gmap-marker>
+      </ui-gmap-google-map>
     </ion-content>
 </ion-view>

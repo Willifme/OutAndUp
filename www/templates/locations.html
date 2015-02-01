@@ -1,0 +1,15 @@
+<ion-view view-title="Out and Up Locations">
+	<ion-content scroll="false">
+        <!-- Hardcoding the starting position and zoom amount does not matter -->
+       <ui-gmap-google-map center="{latitude: 53.9308478, longitude: -3.504169}" zoom="6">
+           <ui-gmap-markers models="places" coords="'self'">
+                <ui-gmap-windows show="true" ng-cloak>
+                    <div ng-non-bindable>
+                        <!-- Screw it -->
+                        <a href="#/app/places/{{ id }}">{{name}}</a>
+                    </div>
+               </ui-gmap-windows>
+            </ui-gmap-markers>
+        </ui-gmap-google-map>
+    </ion-content>
+</ion-view>
