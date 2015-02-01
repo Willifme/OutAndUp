@@ -12,7 +12,7 @@
                     {{ place.name }}
                 </div>
                 <div ng-repeat="attraction in place.attractions  | filter:nameSearch">
-                    <a class="item" href="#/app/places/{{place.id}}/attractions?attractionId={{attraction.id}}">
+                    <a class="item" href="#/app/places/{{place.id}}/attractions?placeId={{place.id}}&attractionId={{attraction.id}}">
                         {{ attraction.name }}
                     </a>
                 </div>

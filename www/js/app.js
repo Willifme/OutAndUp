@@ -88,7 +88,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.
     })
   
 	.state('app.places.place.attractions', {
-        url: "/attractions?attractionId",
+        url: "/attractions?placeId&attractionId",
 		views: {
 			'menuContent@app': {
 				templateUrl: "templates/places/place/attractions/attractions.html",

@@ -6,8 +6,7 @@ angular.module('starter.controllers', [])
 	
 	// This object needs revision
 	$rootScope.attractionReviews = [ 
-		{ title: 'Amazing fun!', 
-         author: 'Diggory Fulton', 
+		{ title: 'Amazing fun!', author: 'Diggory Fulton', 
          body: 'While doing this activity I had the most fun I have ever had while being at the Out and Up Centre.',
          stars: 4, id: 0 },
         
@@ -54,7 +53,7 @@ angular.module('starter.controllers', [])
         
         { title: 'Great fun!', 
          author: 'Jefferson Norman',
-         body: 'Body: Amazing, a great day out for all.', 
+         body: 'Amazing, a great day out for all.', 
          stars: 4, id: 0 },
         
         { title: 'Could be better…', 
@@ -123,10 +122,16 @@ angular.module('starter.controllers', [])
     
 	$scope.id = $stateParams.placeId;
 
+    console.log($stateParams);
+    
     $scope.max = 5;
     
 })
 
 .controller('AttractionCtrl', function($scope, $stateParams) {
+    
     $scope.attractionId = $stateParams.attractionId;
+    
+    $scope.placeId = $stateParams.placeId;
+    
 });

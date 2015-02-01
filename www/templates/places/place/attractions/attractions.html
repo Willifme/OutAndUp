@@ -1,6 +1,6 @@
 <ion-view ng-controller="PlaceCtrl" view-title="{{places[id].name}} Attractions">
     <ion-content>
-        <div ng-if="!attractionId">
+        <div ng-if="!attractionId && !placeId">
             <div ng-repeat="attraction in places[id].attractions">
                 <!-- Insert logos here -->
                 <div class="list card">
@@ -20,13 +20,13 @@
             </div>
         </div>
         <div ng-else>
-            <!-- Fix this markup duplication -->
+            <!-- The realtionship between the descriptions and places is complex -->
             <div class="list card">
                 <div class="item item-divider">
-                    {{ places[id].attractions[attractionId].name }}
+                    {{ attractionDescription[attractionId].name }}
                 </div>
                 <div class="item item-text-wrap">
-                    Description: {{ places[id].attractions[attractionId].description }}
+                    Description: {{ attractionDescription[attractionId].description }}
                 </div>
                 <div class="item item tabs tabs-secondary tabs-icon-left">
                     <a class="tab-item" href="#/app/places/{{id}}/reviews">
