@@ -6,6 +6,16 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.rating', 'elif', 'uiGmapgoogle-maps'])
 
+.filter('range', function() {
+  return function(input, min, max) {
+    min = parseInt(min); //Make string input int
+    max = parseInt(max);
+    for (var i=min; i<max; i++)
+      input.push(i);
+    return input;
+  };
+})
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -101,6 +111,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngMessages', 'ionic.
 		views:  {
 			'menuContent@app': {
 				templateUrl: "templates/places/place/reviews.html"
+			}
+		}
+	})
+  
+	.state('app.places.place.book', {
+		url: "/book",
+		views:  {
+			'menuContent@app': {
+				templateUrl: "templates/places/place/book.html"
 			}
 		}
 	})

@@ -1,0 +1,29 @@
+<ion-view ng-controller="PlaceCtrl" view-title="{{places[id].name}} Booking Form">
+	<ion-content>
+        <form name="bookingForm"  class="css-form" novalidate>
+			<label class="item item-input">
+				<input name="firstName" type="text" placeholder="First Name" required>
+			</label>
+           <label class="item item-input">
+				<input name="lastName" type="text" placeholder="Last Name" required>
+			</label>
+           <label class="item item-input">
+				<input name="email" type="email" placeholder="Email Address" required>
+			</label>
+             <label class="item item-input">
+				<input name="date" type="date" placeholder="Date" required>
+            </label>
+             <label class="item item-input item-select">
+				<div class="input-label">
+                    Age
+                 </div>
+                 <select>
+                     <option ng-repeat="age in [] | range:12:100">{{age}}</option>
+                 </select>
+            </label>
+            <button class="button button-block button-balanced" type="submit">
+                Submit
+            </button>
+		</form>
+	</ion-content>
+</ion-view>
