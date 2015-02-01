@@ -6,33 +6,107 @@ angular.module('starter.controllers', [])
 	
 	// This object needs revision
 	$rootScope.attractionReviews = [ 
-		{ title: 'Attraction review 0', author: 'Example Person 1', body: 'Attraction 0 review body', stars: 2, id: 0 },
-		{ title: 'Attraction review 1', author: 'Example Person 2', body: 'Attraction 1 review body', stars: 1, id: 1 } 
+		{ title: 'Amazing fun!', 
+         author: 'Diggory Fulton', 
+         body: 'While doing this activity I had the most fun I have ever had while being at the Out and Up Centre.',
+         stars: 4, id: 0 },
+        
+		{ title: 'Not bad', author: 'Jefferson Norman', 
+         body: 'While using this activity I had some fun however it could be improved with greater amounts of staff running the activity.', 
+         stars: 3, id: 1 } ,
+        
+        { title: 'Could use some improvement', author: 'Guy Kennard', 
+         body: 'I had fun while using this activity was too short and felt like little happened.', 
+         stars: 2.5, id: 2 } ,
+        
+        { title: 'Poor', author: 'Craig Miles', 
+         body: 'This activity was poor. The quality of the activity was poor and the staff where rude and disrespectful.', 
+         stars: 2, id: 3 }
+        
 	];
 
 	// This object needs revision
 	$rootScope.attractionDescription = [
-		{ name: 'Attraction 0', description: 'Attraction 0 description body', reviews: [$rootScope.attractionReviews[0]], id: 0 },
-		{ name: 'Attraction 1', description: 'Attraction 1 description body', reviews: [$rootScope.attractionReviews[1]], id: 1 } 
+		{ name: 'Assault Course', 
+         description: 'Challenge yourself over the amazingly difficult assault course which will take you through the hardest terrains in the world.', 
+         reviews: [$rootScope.attractionReviews[0], $rootScope.attractionReviews[1]], id: 0 },
+        
+		{ name: 'Kayaking', 
+         description: 'Enter our daring rapids as you face the most dangerous waters in the world!', 
+         reviews: [$rootScope.attractionReviews[1], $rootScope.attractionReviews[2]], id: 1 }, 
+        
+		{ name: 'Archery', 
+         description: 'Become a well-trained archer with our amazing Archery course and activity where you will become a master of Archery!', 
+         reviews: [$rootScope.attractionReviews[0], $rootScope.attractionReviews[3]], id: 2 },
+        
+		{ name: 'Hiking', 
+         description: 'Walk the long path as you see amazing sites with the Hiking range.', 
+         reviews: [$rootScope.attractionReviews[0], $rootScope.attractionReviews[2]], id: 3 },
+        
+		{ name: 'Climbing', 
+         description: 'Climb the vertical heights at your own peril in the Climbing range.', 
+         reviews: [$rootScope.attractionReviews[1], $rootScope.attractionReviews[3]], id: 4 } 
 
 	];
 
 	// This object needs revision
 	$rootScope.placeReviews = [
-        { title: 'Place 1 review', author: 'Example Person 1', body: 'Place 1 review body', stars: 5, id: 0 },
-        { title: 'Place 2 review', author: 'Example Person 2', body: 'Place 2 review body', stars: 3, id: 1 }
+        
+        { title: 'Great fun!', 
+         author: 'Jefferson Norman',
+         body: 'Body: Amazing, a great day out for all.', 
+         stars: 4, id: 0 },
+        
+        { title: 'Could be better…', 
+         author: 'Diggory Fulton',
+         body: 'Okay, had some fun could be better.', 
+         stars: 3, id: 1 },
+        
+        { title: 'Middle of the road.', 
+         author: 'Johnnie Braiden',
+         body: 'Middle of the road, could be improved been to better Activity Centres. 5/10 would not activity at again.', 
+         stars: 2.5, id: 2 },
+        
+        { title: 'Poor', 
+         author: 'Helga Gavin',
+         body: 'Poor, Staff where rude and annoyed me, Activities poor and broken.', 
+         stars: 1.5, id: 3 }
+        
 	];
     
     // This object needs revision
-    $rootScope.placeDescription = [
-        { name: 'Place 1', attractions: [$rootScope.attractionDescription[0], $rootScope.attractionDescription[1]], reviews: [$rootScope.placeReviews[0], $rootScope.placeReviews[1]], description: 'Place 1 descriptionPlace 1 descriptionPlace 1 descriptionPlace 1 description', latitude: 51.500729, longitude: -0.124625, options: { contentString: "Hello"}, id: 0},
-        { name: 'Place 2', attractions: [$rootScope.attractionDescription[1]], reviews: [$rootScope.placeReviews[1]], description: 'Place 2 description', latitude: 51.499479, longitude: -0.124809, id: 1 },
+    $rootScope.placeOverview = [
+        { name: 'Peak District Centre', 
+         attractions: [$rootScope.attractionDescription[0], $rootScope.attractionDescription[1], $rootScope.attractionDescription[2]], 
+         reviews: [$rootScope.placeReviews[0], $rootScope.placeReviews[2]],
+         description: 'Enjoy the best that Out And Up has to offer in the amazing Peak District National park.',
+         latitude: 53.1224876, 
+         longitude: -1.7863538, 
+         id: 0},
+        
+        { name: 'Yorkshire Dales Centre', 
+         attractions: [$rootScope.attractionDescription[0], $rootScope.attractionDescription[1], $rootScope.attractionDescription[3]], 
+         reviews: [$rootScope.placeReviews[1], $rootScope.placeReviews[3]], 
+         description: 'Enjoy the Yorkshire Dales with our great outdoor activity centre at Out and Up.', 
+         latitude: 54.298517, 
+         longitude: -2.0994642, 
+         id: 1 },
+        
+        { name: 'South Downs Centre', 
+         attractions: [$rootScope.attractionDescription[0], $rootScope.attractionDescription[1], $rootScope.attractionDescription[4]], 
+         reviews: [$rootScope.placeReviews[0], $rootScope.placeReviews[3]], 
+         description: 'Explore the beauty of the South Downs with this Out and Up Centre.', 
+         latitude: 50.9787754, 
+         longitude: -0.7430816, 
+         id: 2 },
+        
     ];
     
 	// They are hardcoded but it does not matter
 	$rootScope.places = [
-		$rootScope.placeDescription[0],
-        $rootScope.placeDescription[1]
+		$rootScope.placeOverview[0],
+        $rootScope.placeOverview[1],
+        $rootScope.placeOverview[2]
 	];
 
 })
@@ -49,6 +123,8 @@ angular.module('starter.controllers', [])
     
 	$scope.id = $stateParams.placeId;
 
+    $scope.max = 5;
+    
 })
 
 .controller('AttractionCtrl', function($scope, $stateParams) {

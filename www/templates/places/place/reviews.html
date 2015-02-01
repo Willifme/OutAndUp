@@ -8,7 +8,7 @@
             <div class="item item-text-wrap">
                 <h3> {{ review.author}} says:</h3>
                 <p>{{ review.body }}</p>
-                <p><rating ng-model="review.stars" max="max"></rating></p>
+                <p><rating ng-model="review.stars" max="max" ng-readonly="1"></rating></p>
             </div>		
 		</div>
 	</ion-content>
