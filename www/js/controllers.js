@@ -4,8 +4,9 @@ angular.module('starter.controllers', [])
 
 .run(function($rootScope) {
 	
-	// This object needs revision
-	$rootScope.attractionReviews = [ 
+    // I need to store this information somewhere like a database
+    
+    $rootScope.attractionReviews = [ 
 		{ title: 'Amazing fun!', author: 'Diggory Fulton', 
          body: 'While doing this activity I had the most fun I have ever had while being at the Out and Up Centre.',
          stars: 4, id: 0 },
@@ -24,7 +25,6 @@ angular.module('starter.controllers', [])
         
 	];
 
-	// This object needs revision
 	$rootScope.attractionDescription = [
 		{ name: 'Assault Course', 
          description: 'Challenge yourself over the amazingly difficult assault course which will take you through the hardest terrains in the world.', 
@@ -48,7 +48,6 @@ angular.module('starter.controllers', [])
 
 	];
 
-	// This object needs revision
 	$rootScope.placeReviews = [
         
         { title: 'Great fun!', 
@@ -73,7 +72,6 @@ angular.module('starter.controllers', [])
         
 	];
     
-    // This object needs revision
     $rootScope.placeOverview = [
         { name: 'Peak District Centre', 
          attractions: [$rootScope.attractionDescription[0], $rootScope.attractionDescription[1], $rootScope.attractionDescription[2]], 
@@ -122,7 +120,9 @@ angular.module('starter.controllers', [])
     
 	$scope.id = $stateParams.placeId;
 
-    console.log($stateParams);
+    console.log($scope.id);
+    
+    // This is the maximum amount of stars a rating can have
     
     $scope.max = 5;
     

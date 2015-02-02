@@ -1,6 +1,7 @@
 <ion-view ng-controller="PlaceCtrl" view-title="{{places[id].name}} Attractions">
     <ion-content>
-        <div ng-if="!attractionId && !placeId">
+        <div ng-if="!attractionId">
+            {{ attractionId }}
             <div ng-repeat="attraction in places[id].attractions">
                 <!-- Insert logos here -->
                 <div class="list card">
